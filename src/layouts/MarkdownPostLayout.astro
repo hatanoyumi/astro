@@ -1,0 +1,19 @@
+---
+import Footer from '../components/Footer.astro'
+
+const { frontmatter } = Astro.props;
+---
+<head>
+  <meta charset="utf-8">
+</head>
+
+<h1>{frontmatter.title}</h1>
+<h2>{frontmatter.description}</h2>
+<p>投稿日: {frontmatter.pubDate.toString().slice(0,10)}</p>
+<p>著者: {frontmatter.author}</p>
+<img src={frontmatter.image.url} width="300" style={frontmatter.image.style} alt={frontmatter.image.alt} />
+<slot />
+
+<a href="../../blog/">←Back</a>
+
+<Footer />
