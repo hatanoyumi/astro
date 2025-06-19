@@ -1,13 +1,11 @@
 ---
-import Footer from '../components/Footer.astro'
+import BaseLayout from './BaseLayout.astro';
 
 const { frontmatter } = Astro.props;
 ---
-<head>
-  <meta charset="utf-8">
-</head>
 
-<h1>{frontmatter.title}</h1>
+<BaseLayout pageTitle={frontmatter.title}>
+
 <h2>{frontmatter.description}</h2>
 <p>投稿日: {frontmatter.pubDate.toString().slice(0,10)}</p>
 <p>著者: {frontmatter.author}</p>
@@ -16,4 +14,4 @@ const { frontmatter } = Astro.props;
 
 <a href="../../blog/">←Back</a>
 
-<Footer />
+</BaseLayout>
